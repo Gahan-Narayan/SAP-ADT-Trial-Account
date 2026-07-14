@@ -1,0 +1,46 @@
+managed implementation in class ZBP_R_TAB_CA_INV_ACC unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TAB_CA_INV_ACC alias ZrTabCaInvAcc
+persistent table ZTAB_CA_INV_ACC
+extensible
+draft table ZTB_CA_INV_ACC_D
+etag master ChangedAt
+lock master total etag ChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Userid;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   ChangedAt;
+
+  field ( readonly : update )
+   Userid;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTAB_CA_INV_ACC corresponding extensible
+  {
+    Userid = USERID;
+    AccessFlag = ACCESS_FLAG;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    ChangedAt = CHANGED_AT;
+  }
+
+}
