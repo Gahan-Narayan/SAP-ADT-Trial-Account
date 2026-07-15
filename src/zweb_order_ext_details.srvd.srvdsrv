@@ -1,0 +1,4 @@
+@EndUserText.label: 'API - custom entity'
+define service ZWEB_ORDER_EXT_DETAILS {
+  expose ZC_ORDER_EXT_DETAILS as OrderExtDetails;
+}

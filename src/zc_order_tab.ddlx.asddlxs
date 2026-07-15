@@ -1,0 +1,100 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'OrderID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'OrderID'
+annotate view ZC_ORDER_TAB with
+{
+  @EndUserText.label: 'OrderID'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'OrderID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'OrderID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  OrderID;
+  
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Description;
+  
+  @EndUserText.label: 'Status'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Status;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  LastChangedBy;
+  
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  ChangedAt;
+}

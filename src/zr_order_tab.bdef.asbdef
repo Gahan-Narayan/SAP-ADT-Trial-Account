@@ -1,0 +1,34 @@
+unmanaged implementation in class zbp_r_order_tab unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_ORDER_TAB alias OrderTable
+draft table ZORDER_TAB_D
+lock master total etag ChangedAt
+authorization master ( global )
+etag master ChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly )  OrderID;
+  field ( readonly )  CreatedBy, CreatedAt, LastChangedBy, ChangedAt;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action ( features : instance ) Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZORDER_TAB
+    {
+      OrderID       = ORDER_ID;
+      Description   = DESCRIPTION;
+      Status        = STATUS;
+      CreatedBy     = CREATED_BY;
+      CreatedAt     = CREATED_AT;
+      LastChangedBy = LAST_CHANGED_BY;
+      ChangedAt     = CHANGED_AT;
+    }
+}

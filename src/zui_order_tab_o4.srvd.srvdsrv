@@ -1,0 +1,7 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ORDER_TAB'
+}
+define service ZUI_ORDER_TAB_O4
+  provider contracts odata_v4_ui {
+  expose ZC_ORDER_TAB as OrderTable;
+}

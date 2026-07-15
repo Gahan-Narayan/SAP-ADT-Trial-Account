@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_ORDER_TAB'
+@MappingRole: true
+define role ZR_ORDER_TAB {
+  grant select on ZR_ORDER_TAB
+  where TRUE;
+}

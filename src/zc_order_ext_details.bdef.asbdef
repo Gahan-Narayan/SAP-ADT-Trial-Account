@@ -1,0 +1,13 @@
+unmanaged implementation in class zbp_c_order_ext_details unique;
+strict ( 2 );
+
+define behavior for ZC_ORDER_EXT_DETAILS alias OrderExtDetails
+lock master
+authorization master ( global )
+{
+  create ( authorization : global );
+  update;
+
+  field ( readonly ) OrderID;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, ChangedAt;
+}
